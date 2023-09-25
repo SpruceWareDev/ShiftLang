@@ -1,0 +1,2 @@
+print [String expression]
+var [Data type] [Identifier] = [Value]

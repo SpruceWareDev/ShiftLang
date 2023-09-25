@@ -1,0 +1,4 @@
+var string test = "This is even more based language :3";
+
+print test;
+print "Test print!";
