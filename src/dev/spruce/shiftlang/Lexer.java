@@ -32,6 +32,9 @@ public class Lexer {
     }
 
     public static InstructionData parseInstruction(String instructionString) {
+        while (instructionString.startsWith(" ")) {
+            instructionString = instructionString.replaceFirst(" ", "");
+        }
         String[] instructionData = instructionString.split(" ");
         String commandWord = instructionData[0];
         int offset = commandWord.length() + 1;

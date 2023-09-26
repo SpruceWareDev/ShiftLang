@@ -1,0 +1,44 @@
+# ---------------------------------------;
+# Fibonacci sequences example. OMG NO WAY;
+# ---------------------------------------;
+
+# Define the position in the sequence you want to find;
+var int n = 9;
+
+# Define variables used in the calculation;
+var int a = 0;
+var int b = 1;
+var int c = 0;
+
+# Increment n by 1 to make the loop inclusive;
+var int n = n + 1;
+
+for 2 >> n ->
+    var int c = a + b,
+    var int a = b,
+    var int b = c;
+
+print "nth value in the sequence: " + c;
+print "";
+
+# ---------------------------------------;
+# Fibonacci sequences example. This time using 2 for loops for more values;
+# ---------------------------------------;
+
+# Define the number of values you want to get;
+var int loops = 10;
+
+# Define variables used in the calculation;
+var int a = 0;
+var int b = 1;
+var int c = 0;
+
+var int i = 0;
+for 0 >> loops ->
+    for 0 >> i ->
+        var int c = a + b,
+        var int a = b,
+        var int b = c
+    ,
+    print "term " + i + " in the sequence: " + c,
+    var int i = i + 1;

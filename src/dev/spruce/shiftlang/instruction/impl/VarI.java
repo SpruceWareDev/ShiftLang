@@ -2,6 +2,7 @@ package dev.spruce.shiftlang.instruction.impl;
 
 import dev.spruce.shiftlang.instruction.Instruction;
 import dev.spruce.shiftlang.instruction.InstructionData;
+import dev.spruce.shiftlang.parsing.BooleanExpressionParser;
 import dev.spruce.shiftlang.parsing.NumberExpressionParser;
 import dev.spruce.shiftlang.parsing.StringExpressionParser;
 import dev.spruce.shiftlang.storage.variable.DataType;
@@ -45,6 +46,10 @@ public class VarI extends Instruction {
             case "float" -> {
                 float parsedExpression = NumberExpressionParser.parse(assignmentExpression.substring(1));
                 VariableMemory.getInstance().register(identifier, new Variable(DataType.FLOAT, parsedExpression));
+            }
+            case "boolean" -> {
+                boolean parsedExpression = BooleanExpressionParser.parse(assignmentExpression.substring(1));
+                VariableMemory.getInstance().register(identifier, new Variable(DataType.BOOLEAN, parsedExpression));
             }
             default -> throw new RuntimeException("Unknown data type for variable: '" + type + "'!");
         }

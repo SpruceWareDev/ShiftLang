@@ -1,4 +1,8 @@
-var string test = "This is even more based language :3";
-
+# String manipulation example;
+var string name = "Tom";
+var string test = "Hello " + name + "!";
 print test;
-print "Test print!";
+
+# Number example;
+var float number = (6.0 + 10.0) / 2;
+print number;

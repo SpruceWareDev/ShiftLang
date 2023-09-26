@@ -20,15 +20,15 @@ public class Interpreter {
         advance();
         while (instructionPoint < instructions.size()) {
             InstructionData instructionData = instructions.get(instructionPoint);
-            handleCurrentInstruction(instructionData);
+            handleInstruction(instructionData);
             advance();
         }
     }
 
-    private void handleCurrentInstruction(InstructionData instructionData) {
+    public static void handleInstruction(InstructionData instructionData) {
         Instruction currentInstruction = InstructionSet.getInstance().getInstruction(instructionData.getCommandWord());
         if (currentInstruction == null)
-            throw new RuntimeException("Unknown instruction keyword!");
+            throw new RuntimeException("Unknown instruction keyword '" + instructionData.getCommandWord() + "'!");
         currentInstruction.handleCommand(instructionData);
     }
 
