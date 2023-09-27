@@ -1,6 +1,5 @@
 package dev.spruce.shiftlang.parsing;
 
-import dev.spruce.shiftlang.Interpreter;
 import dev.spruce.shiftlang.storage.variable.DataType;
 import dev.spruce.shiftlang.storage.variable.Variable;
 import dev.spruce.shiftlang.storage.variable.VariableMemory;

@@ -1,9 +1,6 @@
 package dev.spruce.shiftlang.instruction;
 
-import dev.spruce.shiftlang.instruction.impl.CommentI;
-import dev.spruce.shiftlang.instruction.impl.ForI;
-import dev.spruce.shiftlang.instruction.impl.PrintI;
-import dev.spruce.shiftlang.instruction.impl.VarI;
+import dev.spruce.shiftlang.instruction.impl.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +16,7 @@ public class InstructionSet {
         this.instructionSet.add(new VarI());
         this.instructionSet.add(new CommentI());
         this.instructionSet.add(new ForI());
+        this.instructionSet.add(new IncludeI());
     }
 
     public Instruction getInstruction(String commandWord) {

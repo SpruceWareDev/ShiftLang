@@ -1,2 +1,5 @@
-print [String expression]
-var [Data type] [Identifier] = [Value]
+print [String expression];
+var [Data type] [Identifier] = [Value];
+# This is a comment and is ignored completely;
+for [for expression [from >> to]] -> [set of instructions to run separated by a comma];
+include [name of script to include];

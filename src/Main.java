@@ -11,15 +11,21 @@ import dev.spruce.shiftlang.storage.variable.VariableMemory;
 import dev.spruce.shiftlang.util.ForLoopData;
 import dev.spruce.shiftlang.util.ProgramTimer;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
+import static dev.spruce.shiftlang.Lexer.FILE_EXTENSION;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         ProgramTimer timer = new ProgramTimer();
 
-        List<InstructionData> parsedInstructions = Lexer.parseInstructionsFromFile("code/fibonacci.sft");
+        Lexer.setMainScriptLocation("code" + File.separator + "includes");
+        String mainScriptName = Lexer.getMainScriptLocation() + File.separator + "main" + FILE_EXTENSION;
+
+        List<InstructionData> parsedInstructions = Lexer.parseInstructionsFromFile(mainScriptName);
         Interpreter interpreter = new Interpreter(parsedInstructions);
         try {
             interpreter.execute();

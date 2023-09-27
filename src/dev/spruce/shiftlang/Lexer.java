@@ -1,13 +1,22 @@
 package dev.spruce.shiftlang;
 
-import dev.spruce.shiftlang.instruction.Instruction;
 import dev.spruce.shiftlang.instruction.InstructionData;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Lexer {
+
+    public static final String FILE_EXTENSION = ".sft";
+    private static String mainScriptLocation;
+
+    public static void setMainScriptLocation(String location) {
+        mainScriptLocation = location;
+    }
 
     public static List<InstructionData> parseInstructionsFromFile(String fileName) throws IOException {
         List<InstructionData> instructions = new ArrayList<>();
@@ -39,5 +48,9 @@ public class Lexer {
         String commandWord = instructionData[0];
         int offset = commandWord.length() + 1;
         return new InstructionData(commandWord, instructionString.substring(offset), instructionString);
+    }
+
+    public static String getMainScriptLocation() {
+        return mainScriptLocation;
     }
 }
