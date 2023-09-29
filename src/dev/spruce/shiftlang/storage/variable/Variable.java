@@ -10,10 +10,6 @@ public class Variable {
         this.value = value;
     }
 
-    public Class<?> getCastedValue() {
-        return (Class<?>) type.castType.cast(value);
-    }
-
     public DataType getType() {
         return type;
     }

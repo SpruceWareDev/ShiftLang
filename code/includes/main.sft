@@ -1,3 +1,13 @@
 include "math";
 
-print PI;
+func void nutsack() ->
+    print "Ball :3",
+    print "Nut :0";
+
+func void test() ->
+    for 0 >> 5 ->
+        call nutsack
+    ,
+    print PI;
+
+call test;

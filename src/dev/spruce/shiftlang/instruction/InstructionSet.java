@@ -17,6 +17,9 @@ public class InstructionSet {
         this.instructionSet.add(new CommentI());
         this.instructionSet.add(new ForI());
         this.instructionSet.add(new IncludeI());
+        this.instructionSet.add(new FuncI());
+        this.instructionSet.add(new CallI());
+        this.instructionSet.add(new ReturnI());
     }
 
     public Instruction getInstruction(String commandWord) {
